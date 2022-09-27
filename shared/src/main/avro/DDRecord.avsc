@@ -1,0 +1,266 @@
+{
+  "type" : "record",
+  "name" : "DDRecord",
+  "namespace" : "com.dbrx.dd.record",
+  "fields" : [ {
+    "name" : "dra_id",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "market_shortname",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "is_prod",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "common_assignment_run_id",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "assignment_run_id",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "sp_set_id",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "event_created_at",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "shift_id",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "sp_id",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "cur_route",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "raw_route",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "is_idle_shift",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "shift_lat",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "shift_lng",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "on_manual_assign",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "scheduled_end_time",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "scheduled_start_time",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "soft_skills",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "dasher_age",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "can_assign_cash_order",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "requires_marqueta",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "dasher_score",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "is_equipped",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "is_first_shift",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "is_top_dasher",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "is_high_ar_top_dasher",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "cur_route_type",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "ideal_flf",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "flf",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "route_is_all_pickup_before_dropoff",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "acceptance_rate_on_check_in",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "vehicle_type",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "dasher_id",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "enroute_delivery_info",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "metadata",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "metadata_json",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "source",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "home_starting_point",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "latest_hub_check_in_time",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "total_pay",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "tip_amount",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "num_deliveries",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "delivery_pay",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "commute_expire_time",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "commute_name",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "commute_end_destination_lat",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "commute_end_destination_lng",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "max_total_distance",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "max_r2c_distance",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "high_paying_order_eligibility",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "dsd_dx_pickscore",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "is_waiting_for_assignment",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "should_consider_for_delivery_packages",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "name" : "last_unassigned_at",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "supported_taskgroup_types",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "earnings_mode",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "next_location_lat",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "next_location_lng",
+    "type" : "double",
+    "default" : -1.7976931348623157E308
+  }, {
+    "name" : "EVENT_NAME",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "EVENT_TIME",
+    "type" : "long",
+    "default" : -9223372036854775808
+  }, {
+    "name" : "IDEMPOTENCY_KEY",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "ENTITY_NAME",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "CUSOTOM_ATTRIBUTES",
+    "type" : "string",
+    "default" : ""
+  }, {
+    "name" : "EVENT_VERSION",
+    "type" : "int",
+    "default" : -2147483648
+  }, {
+    "name" : "EVENT_HOUR",
+    "type" : "string",
+    "default" : ""
+  } ]
+}

@@ -1,0 +1,56 @@
+package com.dbrx.dd.record
+
+import org.apache.avro.Schema
+import org.apache.avro.generic.{GenericRecord, IndexedRecord}
+
+import java.io.ByteArrayOutputStream
+
+
+case class DDRecord(dra_id: String="", market_shortname: String="", is_prod: Boolean=false, common_assignment_run_id: String="",
+                    assignment_run_id: String="", sp_set_id: String="", event_created_at: Long=Long.MinValue, shift_id: Long=Long.MinValue, sp_id: Long=Long.MinValue,
+                    cur_route: String="", raw_route: String="", is_idle_shift: Boolean=false, shift_lat: Double=Double.MinValue, shift_lng: Double=Double.MinValue,
+                    on_manual_assign: Boolean=false, scheduled_end_time: Long=Long.MinValue, scheduled_start_time: Long=Long.MinValue, soft_skills: String="",
+                    dasher_age: Long=Long.MinValue, can_assign_cash_order: Boolean=false, requires_marqueta: Boolean=false, dasher_score: Long=Long.MinValue,
+                    is_equipped: Boolean=false, is_first_shift: Boolean=false, is_top_dasher: Boolean=false, is_high_ar_top_dasher: Boolean=false,
+                    cur_route_type: String="", ideal_flf: Double=Double.MinValue, flf: Double=Double.MinValue, route_is_all_pickup_before_dropoff: Boolean=false,
+                    acceptance_rate_on_check_in: Double=Double.MinValue, vehicle_type: String="", dasher_id: Long=Long.MinValue, enroute_delivery_info: String="",
+                    metadata: String="", metadata_json: String="", source: String="", home_starting_point: Long=Long.MinValue, latest_hub_check_in_time: String="",
+                    total_pay: Long=Long.MinValue, tip_amount: Long=Long.MinValue, num_deliveries: Long=Long.MinValue, delivery_pay: Long=Long.MinValue, commute_expire_time: String="",
+                    commute_name: String="", commute_end_destination_lat: Double=Double.MinValue, commute_end_destination_lng: Double=Double.MinValue,
+                    max_total_distance: Double=Double.MinValue, max_r2c_distance: Double=Double.MinValue, high_paying_order_eligibility: String="",
+                    dsd_dx_pickscore: Double=Double.MinValue, is_waiting_for_assignment: Boolean=false, should_consider_for_delivery_packages: Boolean=false,
+                    last_unassigned_at: String="", supported_taskgroup_types: String="", earnings_mode: String="", next_location_lat: Double=Double.MinValue,
+                    next_location_lng: Double=Double.MinValue, EVENT_NAME: String="", EVENT_TIME: Long=Long.MinValue, IDEMPOTENCY_KEY: String="", SOURCE: String="",
+                    ENTITY_NAME: String="", CUSOTOM_ATTRIBUTES: String="", EVENT_VERSION:  Int=Int.MinValue, EVENT_HOUR: String=""
+                 )
+
+object DDRecord{
+  implicit val schema: Schema = AvroSchema[DDRecord]
+  implicit val toRecord: ToRecord[DDRecord] = ToRecord.apply[DDRecord]
+  implicit val fromRecord: FromRecord[DDRecord] = FromRecord.apply[DDRecord]
+
+  def toAvro(data:DDRecord): Array[Byte] = {
+    ImmutableRecord
+    if (data == null) null else {
+      val baos = new ByteArrayOutputStream()
+      val avroOutputStream = AvroOutputStream.binary[DDRecord]
+      val output = avroOutputStream.to(baos).build()
+      output.write(data)
+      output.close()
+      baos.toByteArray
+    }
+  }
+
+  def fromAvro(data:Array[Byte]): DDRecord = {
+    if (data == null) null else {
+      val avroInputStream =  AvroInputStream.binary[DDRecord]
+      val input = avroInputStream.from(data).build(schema)
+      val result = input.iterator.next()
+      input.close()
+      result
+    }
+  }
+}
+
+
+
